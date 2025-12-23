@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# Adapty.io Landing Page Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Реплика главной страницы [adapty.io](https://adapty.io) созданная с использованием React, TypeScript, Vite и Tailwind CSS.
 
-Currently, two official plugins are available:
+## Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - UI библиотека
+- **TypeScript** - типизация
+- **Vite** - сборщик и dev сервер
+- **Tailwind CSS** - стилизация
+- **Yarn** - менеджер пакетов
 
-## React Compiler
+## Установка
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Разработка
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn dev
 ```
+
+Откройте [http://localhost:5173](http://localhost:5173) в браузере.
+
+## Сборка
+
+```bash
+yarn build
+```
+
+## Структура проекта
+
+```
+src/
+├── components/
+│   ├── Hero.tsx              # Hero секция с заголовком и CTA
+│   ├── TrustedBy.tsx          # Секция с логотипами клиентов
+│   ├── Features.tsx           # Карточки функций (For developers/owners/marketers)
+│   ├── Stats.tsx              # Секция со статистикой
+│   ├── SDKIntegration.tsx     # Примеры кода SDK
+│   ├── FeatureCards.tsx       # Детальные фичи с отзывами
+│   ├── Testimonials.tsx       # Отзывы клиентов
+│   ├── Enterprise.tsx         # Enterprise-grade секция
+│   └── FinalCTA.tsx           # Финальная CTA секция
+├── App.tsx                    # Главный компонент
+├── main.tsx                   # Точка входа
+└── index.css                  # Глобальные стили (Tailwind)
+
+PROMPTS.md                     # История промптов для v0.dev
+```
+
+## Деплой
+
+Проект готов к деплою на:
+- **Vercel** - `vercel --prod`
+- **Netlify** - `netlify deploy --prod`
+- **GitHub Pages** - через GitHub Actions
+
+## История промптов
+
+Все промпты, использованные для создания компонентов через v0.dev, сохранены в файле [PROMPTS.md](./PROMPTS.md).
+
+## Особенности
+
+- ✅ Полностью адаптивный дизайн
+- ✅ Современный UI с градиентами и анимациями
+- ✅ Все основные секции оригинального сайта
+- ✅ Оптимизированная производительность
+- ✅ TypeScript для типобезопасности
